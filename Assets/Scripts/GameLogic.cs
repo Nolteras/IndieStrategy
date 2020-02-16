@@ -21,6 +21,12 @@ public class GameLogic : MonoBehaviour
     private bool ResPanOpen = false;
     public GameObject WorkersPanel;//id - 2
     private bool WorkPanOpen = false;
+    public GameObject StatePanel;//id - 3
+    private bool StatPanOpen = false;
+    public GameObject EventsPanel;//id - 4
+    private bool EventPanOpen = false;
+    public GameObject ArmyPanel;//id - 5
+    private bool ArmyPanOpen = false;
 
 
 
@@ -58,7 +64,7 @@ public class GameLogic : MonoBehaviour
     //Скрипт открытия панелей. От переменной зависит, какой именно открывать
     public void OpenPanel(int Type)
     {
-        if (ResPanOpen || WorkPanOpen)
+        if (ResPanOpen || WorkPanOpen || StatPanOpen || EventPanOpen || ArmyPanOpen)
         {
             return;//Если какая-то панель открыта, выходим
         }
@@ -75,6 +81,18 @@ public class GameLogic : MonoBehaviour
                 WorkersPanel.SetActive(true);
                 WorkPanOpen = true;
                 return;//Активируем вторую панель
+            case 3:
+                StatePanel.SetActive(true);
+                StatPanOpen = true;
+                return;//Активируем третью панель
+            case 4:
+                EventsPanel.SetActive(true);
+                EventPanOpen = true;
+                return;//Активируем четвёртрую панель
+            case 5:
+                ArmyPanel.SetActive(true);
+                ArmyPanOpen = true;
+                return;
         }
     }
 
@@ -94,6 +112,18 @@ public class GameLogic : MonoBehaviour
                 WorkersPanel.SetActive(false);
                 WorkPanOpen = false;
                 return;//Закрываем вторую панель
+            case 3:
+                StatePanel.SetActive(false);
+                StatPanOpen = false;
+                return;//Закрываем третью панель
+            case 4:
+                EventsPanel.SetActive(false);
+                EventPanOpen = false;
+                return;//Закрываем четвёртрую панель
+            case 5:
+                ArmyPanel.SetActive(false);
+                ArmyPanOpen = false;
+                return;
         }
     }
 

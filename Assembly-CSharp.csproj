@@ -63,7 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameLogic.cs" />
+    <Compile Include="Assets\Scripts\PanelsLogic\Army.cs" />
+    <Compile Include="Assets\Scripts\PanelsLogic\Events.cs" />
     <Compile Include="Assets\Scripts\PanelsLogic\Resources.cs" />
+    <Compile Include="Assets\Scripts\PanelsLogic\State.cs" />
     <Compile Include="Assets\Scripts\PanelsLogic\Workers.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Admin/Desktop/Test/NoName/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

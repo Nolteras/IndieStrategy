@@ -16,7 +16,7 @@ public class GameLogic : MonoBehaviour
     //Панели интерфейса. Каждой панели по состоянию и по айди
     [Header("Game Panels")]
     public GameObject CommandPanel;//id - 0
-    //private bool MainPanOpen = true;
+    private bool MainPanOpen = false;
     public GameObject ResPanel;//id - 1
     private bool ResPanOpen = false;
     public GameObject WorkersPanel;//id - 2
@@ -49,6 +49,12 @@ public class GameLogic : MonoBehaviour
     public int FoodWorkers = 0;
 
 
+    //Разные объекты
+    [Header("Entities")]
+    public GameObject tribe; 
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,13 +64,12 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     //Скрипт открытия панелей. От переменной зависит, какой именно открывать
     public void OpenPanel(int Type)
     {
-        if (ResPanOpen || WorkPanOpen || StatPanOpen || EventPanOpen || ArmyPanOpen)
+        if (MainPanOpen || ResPanOpen || WorkPanOpen || StatPanOpen || EventPanOpen || ArmyPanOpen)
         {
             return;//Если какая-то панель открыта, выходим
         }
@@ -72,7 +77,9 @@ public class GameLogic : MonoBehaviour
         switch (Type)
         {
             case 0:
-                return;//Нулевой айди у главной панели, она не должна закрываться
+                CommandPanel.SetActive(true);
+                MainPanOpen = true;
+                return;//Используется один раз в самом начале
             case 1:
                 ResPanel.SetActive(true);
                 ResPanOpen = true;

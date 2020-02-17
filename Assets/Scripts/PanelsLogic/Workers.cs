@@ -14,7 +14,7 @@ public class Workers : MonoBehaviour
     private const int id = 2;
 
 
-    public GameObject MainPanel;//Главная Панель
+    public GameObject GameLogic;//Игровая логика
 
 
     // Start is called before the first frame update
@@ -22,8 +22,8 @@ public class Workers : MonoBehaviour
     {
         //Приравниваем счётчики к дейсвительному числу ресурсов. Так как изменения происходят 
         //только каждый ход, то менять их через Апдейт только в особых случаях
-        AllWorkersCo.text = MainPanel.GetComponent<GameLogic>().Workers.ToString();
-        FoodWorkersCo.text = MainPanel.GetComponent<GameLogic>().FoodWorkers.ToString();
+        AllWorkersCo.text = GameLogic.GetComponent<GameLogic>().Workers.ToString();
+        FoodWorkersCo.text = GameLogic.GetComponent<GameLogic>().FoodWorkers.ToString();
     }
 
     // Update is called once per frame
@@ -36,6 +36,6 @@ public class Workers : MonoBehaviour
     //Код кнопки закрытия
     public void Close()
     {
-        MainPanel.GetComponent<GameLogic>().ClosePanel(id);
+        GameLogic.GetComponent<GameLogic>().ClosePanel(id);
     }
 }

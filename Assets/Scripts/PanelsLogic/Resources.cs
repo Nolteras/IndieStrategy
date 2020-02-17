@@ -24,7 +24,7 @@ public class Resources : MonoBehaviour
 
 
 
-    public GameObject MainPanel;//Главная Панель
+    public GameObject GameLogic;//Игровая логика
 
 
     // Start is called before the first frame update
@@ -32,15 +32,15 @@ public class Resources : MonoBehaviour
     {
         //Приравниваем счётчики к дейсвительному числу ресурсов. Так как изменения происходят 
         //только каждый ход, то менять их через Апдейт только в особых случаях
-        WoodCo.text = MainPanel.GetComponent<GameLogic>().Wood.ToString();
-        StoneCo.text = MainPanel.GetComponent<GameLogic>().Stone.ToString();
-        FoodCo.text = MainPanel.GetComponent<GameLogic>().Food.ToString();
-        MoneyCo.text = MainPanel.GetComponent<GameLogic>().Money.ToString();
-        CattleCo.text = MainPanel.GetComponent<GameLogic>().Cattle.ToString();
-        MetalCo.text = MainPanel.GetComponent<GameLogic>().Metal.ToString();
-        PlantsCo.text = MainPanel.GetComponent<GameLogic>().Plants.ToString();
-        NatResCo.text = MainPanel.GetComponent<GameLogic>().NatRes.ToString();
-        EquipmentCo.text = MainPanel.GetComponent<GameLogic>().Equipment.ToString();
+        WoodCo.text = GameLogic.GetComponent<GameLogic>().Wood.ToString();
+        StoneCo.text = GameLogic.GetComponent<GameLogic>().Stone.ToString();
+        FoodCo.text = GameLogic.GetComponent<GameLogic>().Food.ToString();
+        MoneyCo.text = GameLogic.GetComponent<GameLogic>().Money.ToString();
+        CattleCo.text = GameLogic.GetComponent<GameLogic>().Cattle.ToString();
+        MetalCo.text = GameLogic.GetComponent<GameLogic>().Metal.ToString();
+        PlantsCo.text = GameLogic.GetComponent<GameLogic>().Plants.ToString();
+        NatResCo.text = GameLogic.GetComponent<GameLogic>().NatRes.ToString();
+        EquipmentCo.text = GameLogic.GetComponent<GameLogic>().Equipment.ToString();
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class Resources : MonoBehaviour
     //Код кнопки закрытия
     public void Close()
     {
-        MainPanel.GetComponent<GameLogic>().ClosePanel(id);
+        GameLogic.GetComponent<GameLogic>().ClosePanel(id);
     }
 
 }

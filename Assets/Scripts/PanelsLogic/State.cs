@@ -8,7 +8,7 @@ public class State : MonoBehaviour
     private const int id = 3;
 
 
-    public GameObject MainPanel;//Главная Панель
+    public GameObject GameLogic;//Игровая логика
 
 
     // Start is called before the first frame update
@@ -27,6 +27,6 @@ public class State : MonoBehaviour
     //Код кнопки закрытия
     public void Close()
     {
-        MainPanel.GetComponent<GameLogic>().ClosePanel(id);
+        GameLogic.GetComponent<GameLogic>().ClosePanel(id);
     }
 }

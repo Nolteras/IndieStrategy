@@ -66,6 +66,19 @@ public class GameLogic : MonoBehaviour
     {
     }
 
+    //Скрипт для создания объектов
+    public void CreateEntity(GameObject entity)
+    {
+        Instantiate(entity, gameObject.transform).transform.position = MousePosition();//Создаём энтити, делаем дочерним объектом "мира"
+    }
+
+    //Скрипт для получения позиции курсора
+    private Vector3 MousePosition()
+    {
+        return Input.mousePosition;
+    }
+
+
     //Скрипт открытия панелей. От переменной зависит, какой именно открывать
     public void OpenPanel(int Type)
     {

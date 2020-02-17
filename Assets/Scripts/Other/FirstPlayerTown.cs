@@ -7,12 +7,13 @@ public class FirstPlayerTown : MonoBehaviour
 
     public GameObject CommandPanel;//Главная панель
     public GameObject GameLog;//Логика игры
-    Vector3 PointFTown;//Координаты будущего города
+    private GameObject Tribe;//Ссылка на город в Логике игры
 
     // Start is called before the first frame update
     void Start()
     {
-        CommandPanel.SetActive(false);//Скрываем главную панель
+    Tribe = GameLog.GetComponent<GameLogic>().tribe;
+    CommandPanel.SetActive(false);//Скрываем главную панель
     }
 
     // Update is called once per frame
@@ -20,8 +21,7 @@ public class FirstPlayerTown : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))//Как только происходит нажатие, получаем координаты, по которым сразу же ставим город
         {
-            PointFTown = Input.mousePosition;
-            Instantiate(GameLog.GetComponent<GameLogic>().tribe).transform.position = PointFTown;//Создаём первое поселение
+            GameLog.GetComponent<GameLogic>().CreateEntity(Tribe);//Создаём первое поселение
             CommandPanel.SetActive(true);
             Destroy(gameObject);
         }
